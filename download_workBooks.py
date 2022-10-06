@@ -74,13 +74,9 @@ class WorkBook:
 
 async def main():
     # create page objects
-    books_details = get_books_details()
-
-    objId
-
     objs = [Page(item[0], item[1]) for item in get_books_details()]
 
-
+    # Create workbooks
     wbs_obj = []
     for obj in objs:
         # Retrieve raw data source
@@ -98,6 +94,7 @@ async def main():
     # Download all workbooks
     st= time.time()
 
+    # save all workbooks to data directory
     for wb in wbs_obj:
         await wb.save_book()
         
@@ -106,10 +103,6 @@ async def main():
 
 
 if __name__=="__main__":
-
-    
-
-
 
     base_path = os.path.abspath(__file__ + "/../")
 

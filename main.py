@@ -55,7 +55,7 @@ async def main():
 
     tables = await bdc_obj.findSheetTables()
     # print(tables['2022']['OMCs and LPGMCs Ex-Pump Prices'])
-    print(len(bdc_obj.UNIQUE_COMPANIES['companies']))
+    # print(len(bdc_obj.UNIQUE_COMPANIES['companies']))
 
     print(time.time()-st)
 
