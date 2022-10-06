@@ -1,6 +1,7 @@
 import os
 # from pyclbr import Function
 from  clean_data.books import Book
+from  clean_data.search import found_month, create_date
 # from typing import Any
 import pandas as pd
 from collections import OrderedDict
@@ -11,75 +12,98 @@ import time
 from . loader import get_sheets
 
 
+
 class Downloads (Book):
-    COMPANIES = {"companies":[], "date":[]}
+    
+    COMPANIES:dict = {"companies":[], "date":[]}
+    DATES:list = []
     UNIQUE_COMPANIES:pd.DataFrame
+    PRODUCTS:list = []
 
-    async def formatTable(self,sName, df, yr): 
-        data =  await  self.getFinalTableList(sName,df,yr) 
-
-        # format company names
-        for i in  data.columns:
-            if type(i) == str:
-                company_col = i
-                break
-            else:
-                continue
-
-        # print(sName)
-        # print(type(company_col))
-        date_col = data.columns[-1] 
-
-        def format_name(name):
-            name = name.strip()
-            if ' ' in name:
-                # Capitalise each word in  a company's name
-                name = name.title()
-            # rmove ltd from company name to help remove duplicates
-            # A name could be written at times with ltd at times without
-            name = " ".join([i for i in name.split(' ') if i not in ['Limited', 'Ltd']])
+    async def formatTable(self,sName, df, yr):
+        sName = sName.strip()
+        if found_month(sName) == False:
+            return {None: None}
+        else:
+            data =  await  self.getFinalTableList(sName,df,yr) 
+            cols = data.columns
             
-            return name
-        # print(company_col)
+            def format_name(name):
+                name = name.strip()
+                if ' ' in name:
+                    # Capitalise each word in  a company's name
+                    name = name.title()
+                # remove ltd from company name to help remove duplicates
+                # A name could be written at times with ltd at times without
+                name = " ".join([i for i in name.split(' ') if i not in ['Limited', 'Ltd']])
+                
+                return name
 
-        data[company_col] = data[company_col].apply(lambda comp_name: format_name(comp_name))
+            date_col = cols[-1] 
+            self.PRODUCTS = [*self.PRODUCTS, *cols[1:-2]]
+            # get dates
+            self.DATES = [*self.DATES, *list(data[date_col])]
 
-        # Add all companies to COMPANIES
-        self.COMPANIES["companies"] = [*self.COMPANIES["companies"], *list(data[company_col])]
-        self.COMPANIES["date"] = [*self.COMPANIES["date"], *list(data[date_col])]
-
-        return  {sName:data}
+            if isinstance(self, NonHistoricalDownloads):
+                # format company names
+                for i in  data.columns:
+                    if type(i) == str:
+                        company_col = i
+                        break
+                    else:
+                        continue
+                
+                data[company_col] = data[company_col].apply(lambda comp_name: format_name(comp_name))
+                # Add all companies to COMPANIES
+                self.COMPANIES["companies"] = [*self.COMPANIES["companies"], *list(data[company_col])]
+                self.COMPANIES["date"] = [*self.COMPANIES["date"], *list(data[date_col])]
+            
+            return  {sName:data}
+        
     
     async def findFormattedTables(self,books,year):
         st = time.time()
         formated = {}
         sheets = await asyncio.gather(*[self.formatTable(sName, df,year) for sName, df in books[year].items()])
-        for sheet in sheets:
+        
+        for sheet in sheets:  
+            if list(sheet.keys())[0] == None:
+                # print (sheet)
+                continue
             for sn, df in sheet.items():
-                formated[sn] = df
+                formated[str(sn)] = df
         print(f'[{self.page_details[1]} - Formating]: [{time.time()-st} secons]')
+        
         return formated
 
     async def findSheetTables(self):
-        """Provides final tables for download pages
-        funcs contains worbook's getAllTables and downloads subcalss' getFinalTableList"""
+        """
+        Provides final tables for download pages
+        funcs contains worbook's getAllTables and downloads subcalss' getFinalTableList
+        """
 
-        final_tables = {self.page_details[1].split("_")[0]:{}}
+        final_tables = {}
         # load the raw data
         books = get_sheets(self)
         sht_tables =  await asyncio.gather(*[self.findFormattedTables(books,p_yr) for p_yr in books])
         # get list of companies and store in COMPANIES variable
         self.UNIQUE_COMPANIES = pd.DataFrame(self.COMPANIES).drop_duplicates(subset='companies')
-        def get_final_tables(dic):
-            final_tables[self.page_details[1].split("_")[0]][dic[0]] = dic[1]
-        func = lambda tab: map(get_final_tables, tab.items())
-        # Populate final_tables
-        map(func, sht_tables)
-    
+
+        init_tables = {}
+        for table in sht_tables:             
+            
+            for sn, df in table.items():
+                init_tables[sn] = df
+
+        final_tables[self.page_details[1].split("_")[0]] = init_tables
+        # drrop duplices in DATES and PRODUCTS lists
+        self.DATES = list(set(self.DATES))
+        self.PRODUCTS = list(set(self.PRODUCTS))
+
         return final_tables
 
 
-#-------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
 class HistoricalDownloads(Downloads):
     PRODUCTS_IN_SHEET_NAME={}
@@ -153,10 +177,9 @@ class HistoricalDownloads(Downloads):
             sub_tab = sub_tab[0:idx_end]  #Get final sub table      
             sub_tab['product'] = prod     #Add product name 
 
-            sub_tab['DATE'] = sName
 
-            
-
+            sub_tab = create_date(sub_tab, sName, year) 
+          
             sub_tabs[prod] = sub_tab
             self.PRODUCTS_IN_SHEET_NAME[sName] = list(sub_tabs.keys())
         return sub_tabs
@@ -181,23 +204,20 @@ class NonHistoricalDownloads(Downloads):
                     return item.Index
             except AttributeError:
                 ...
-
         idx = list(map(findIdx,df.itertuples(index = True, name ='Pandas')))
         idx = list(OrderedDict.fromkeys(idx))[1:]
         idx_end = list(map(findIdxEnd, df.itertuples(index = True, name ='Pandas')))
         idx_end = list(OrderedDict.fromkeys(idx_end))[1:]
         df = df[idx[0]+1:idx_end[1]].reset_index(drop=True)
-
-        df['DATE'] = sname
-
+        df = create_date(df, sname, yr)
         return df
 
 
     async def getFinalTableList(self,sname,dff,yr):
         """Get the final extracted table that's converted using the 
         conversion factors"""
+
         comp = ['COMPANY', 'Company','company']
-            
         for i in comp:
             if i in list(dff.values[0]):
                 cols = list(dff.values[0])
@@ -206,11 +226,18 @@ class NonHistoricalDownloads(Downloads):
                 cols = list(dff.values[1])
                 values = dff.values[2:]                
         df = pd.DataFrame(values, columns=cols)
-        # columns = list(df.columns)
-
         for col in df.columns:
+            
+
             if col == 'Company' or col=='company':
                 df.rename(columns={col:'COMPANY'},inplace=True)
+            else:
+                # remove spcaes from column name
+                try:
+                    new_col = col.strip()
+                    df.rename(columns={col:new_col},inplace=True)
+                except AttributeError:
+                    ...
             try:
                 if col in re.findall(r'NO.|no.|NO|no|No',col):
                     df.drop(columns=[col],inplace=True)
