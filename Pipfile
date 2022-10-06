@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pymongo = {extras = ["srv"], version = "*"}
+requests = "*"
+bs4 = "*"
+pandas = "*"
+openpyxl = "*"
+aiohttp = "*"
+mypy = "*"
+
+[dev-packages]
+python-dotenv = "*"
+
+[requires]
+python_version = "3.9"

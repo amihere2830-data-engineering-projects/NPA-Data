@@ -1,0 +1,326 @@
+{
+    "raw": {
+        "downloads": {
+            "Historical_Trend": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/statistics/Others/Historical Trend of Petroleum Products Prices_1989 to 30th September 2022.xlsx"
+                ]
+            },
+            "BDC_Performance": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec-2015.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec 2016 updated.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BDC Performance - Jan-Dec 2021.xlsx"
+                ]
+            },
+            "BIDECs_Performance": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/statistics/BDC/BIDECs Performance Jan-June 2022.xlsx"
+                ]
+            },
+            "OMC_Performance": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Dec 2015.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Dec 2016.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Dec 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Dec 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Dec 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Dec 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance Jan-Dec 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/statistics/OMC/OMC Performance - Jan-Jun 2022.xlsx"
+                ]
+            }
+        },
+        "indicative prices": {
+            "2022": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th Jan 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 31st Jan 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th February 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 28th February 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th March 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 31st March 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th April 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 30th April 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 31st May 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th June 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 30th June 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 31st July 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th August 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 31st August 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 1st - 15th September 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2022/Indicative Prices for 16th - 30th September 2022.xlsx"
+                ]
+            },
+            "2021": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st 15th Jan 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th 31st Jan 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st 15th Feb 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th 28th Feb 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st 15th Mar 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th 31st Mar 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st 15th Apr 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th 30th Apr 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st 15th May 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th 31st May 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st 15th June 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th 30th June 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st-15th July 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th-31st July 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st-15th August 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th-31st August 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st-15th  September 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th-30th  September 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st-15th October 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th-31st  October 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st-15th  November 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th-31st  November 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 1st-15th  December 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2021/Indicative Prices for 16th-31st  December 2021.xlsx"
+                ]
+            },
+            "2020": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th January 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st January 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th February 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 29th February 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th March 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st March 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th April 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 30th April 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th May 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st May 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th June 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 30th June 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th July 2020 Rev.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st July 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th August 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st August 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th Sept 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 30th Sept 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th Oct 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st Oct 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th Nov 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 30th Nov 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 1st 15th Dec 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2020/Indicative Prices for 16th 31st Dec 2020.xlsx"
+                ]
+            },
+            "2019": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 1st 15th January 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 16th 31st January 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 1st 15th Feb 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 16th 28th Feb 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 1st 15th March 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 16th 31st March 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 1st 15th April 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 16th 30th April 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 1st 15th May 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 16th 31st May 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 1st 15th June 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2019/Indicative Prices for 16th 30th June 2019.xlsx"
+                ]
+            },
+            "2018": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th January 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st January 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th February 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 28th February 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th March 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st March 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th April 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 30th April 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th May 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st May 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th June 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 30th June 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th July 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st July 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th August 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st August 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th September 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 30th September 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th October 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st October 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th November 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 30th November 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 1st 15th December 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2018/Indicative Prices For 16th 31st December 2018.xlsx"
+                ]
+            },
+            "2017": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices From 1st 15th January 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st January 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices From 1st 15th February 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 28th February 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices From 1st 15th March 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st March 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th April 2017 .xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 30th April 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th May 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st May 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th June 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 30th June 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices 1st 15th July 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st July 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th August 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st August 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th September 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 30th September 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th October 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st October 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 30th November 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 1st 15th December 2017.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/indicative-prices/2017/Indicative Prices For 16th 31st December 2017.xlsx"
+                ]
+            }
+        },
+        "Price Build-Up": {
+            "2022": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st January 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th January 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st February 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th February 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st March 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th March 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st April 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th April 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 20th April 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th May 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st June 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-UP effective 16th June 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st July 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th July 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st August 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th August 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 1st September 2022.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2022/Price Build-Up Effective 16th September 2022.xlsx"
+                ]
+            },
+            "2021": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH FEBRUARY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH APRIL 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH JANUARY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH MARCH 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH JUNE 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH MAY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST APRIL 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST FEBRUARY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST JANUARY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST MARCH 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 5TH MAY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST JUNE 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST JULY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH JULY 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST AUGUST 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH AUGUST 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST SEPTEMBER 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH SEPTEMBER 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST OCTOBER 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST NOVEMBER 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH NOVEMBER 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 1ST DECEMBER 2021.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2021/PRICE BUILD-UP EFFECTIVE 16TH DECEMBER 2021.xlsx"
+                ]
+            },
+            "2020": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH APRIL 2020 - 15-4-20.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH DECEMBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH AUGUST 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH JULY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH JANUARY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH FEBRUARY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH MARCH 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH JUNE 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH MAY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH NOVEMBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH OCTOBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 16TH SEPTEMBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST AUGUST 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST DECEMBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST APRIL 2020 - Revised.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST JANUARY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST JULY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST FEBRUARY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST JUNE 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST MAY 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST MARCH 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST OCTOBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST NOVEMBER 2020.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2020/PRICE BUILD-UP EFFECTIVE 1ST SEPTEMBER 2020.xlsx"
+                ]
+            },
+            "2019": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th December 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th August 2019 Rev.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st January 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st October 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st April 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st May 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th October 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th November 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th June 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st March 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st June 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st July 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th September 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th July 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th January 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th April 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th February 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st February 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th March 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st August 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st November 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st September 2019 Rev.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 1st December 2019.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2019/Price Build Up Effective 16th May 2019.xlsx"
+                ]
+            },
+            "2018": {
+                "downloaded_at=2022-10-01": [
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH DECEMBER 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH AUGUST 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH APRIL 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH JANUARY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH FEBRUARY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH JANUARY 2018 - Revised.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH JANUARY 20181.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH JULY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH JUNE 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH MARCH 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH MAY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH NOVEMBER 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH OCTOBER 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST APRIL 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 16TH SEPTEMBER 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST DECEMBER 2018 - REVISED.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST AUGUST 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST FEBRUARY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST JANUARY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST JULY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST JUNE 2018 - Revised.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST MARCH 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST MAY 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST NOVEMBER 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST SEPTEMBER 20181.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST OCTOBER 2018.xlsx",
+                    "http://www.npa.gov.gh/Data/Documents/price-build-up/2018/PRICE BUILD-UP EFFECTIVE 1ST SEPTEMBER 2018.xlsx"
+                ]
+            }
+        }
+    }
+}
