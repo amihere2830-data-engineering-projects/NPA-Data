@@ -1,4 +1,5 @@
 import asyncio
+import re
 import time
 from clean_data.loader import get_books_details
 from clean_data.downloads import (
@@ -7,13 +8,14 @@ from clean_data.downloads import (
     )
 from clean_data.price import IndicativePrices
 
+
 async def create_object (ob:object, prop: tuple):
     obj = ob(prop)
     return obj
 
 async def main():
 
-    st = time.time()
+    
 
     # Obtain properties needed to create objects   
     nonHist = [get_books_details()[i] for i in NonHist_dw.values()]
@@ -38,8 +40,6 @@ async def main():
     bidec_obj = objs[1]
     omc_obj = objs[2]
 
-    hist_obj = objs[3]
-    
     indicativePr_22 = objs[4]
     indicativePr_21 = objs[5]
     indicativePr_20 = objs[6]
@@ -47,15 +47,30 @@ async def main():
     indicativePr_18 = objs[8]
     indicativePr_17 = objs[9]
 
+    # Objects
+    nonHist_objs = [bdc_obj, bidec_obj, omc_obj]
+    hist_obj = objs[3]
+    indicativePr_objs = [
+        indicativePr_22,
+        indicativePr_21,
+        indicativePr_20,
+        indicativePr_19,
+        indicativePr_18,
+        indicativePr_17
+        ]
+    
     # priceBU_22 = IndicativePrices(priceBU[0])
     # priceBU_21 = IndicativePrices(priceBU[1])
     # priceBU_20 = IndicativePrices(priceBU[2])
     # priceBU_19 = IndicativePrices(priceBU[3])
     # priceBU_18 = IndicativePrices(priceBU[4])
 
-    tables = await bdc_obj.findSheetTables()
-    # print(tables['2022']['OMCs and LPGMCs Ex-Pump Prices'])
-    # print(len(bdc_obj.UNIQUE_COMPANIES['companies']))
+
+    st = time.time()
+
+    # tables_nonHist = await asyncio.gather(*[nonHist_objs[i].findSheetTables() for i in range (len(nonHist_objs))])
+    # tables_Hist = await hist_obj.findSheetTables()
+
 
     print(time.time()-st)
 

@@ -21,30 +21,34 @@ class Downloads (Book):
     PRODUCTS:list = []
 
     async def formatTable(self,sName, df, yr):
+        """
+        Format the retrieved sheet to obtain the necessary table
+        """
         sName = sName.strip()
-        if found_month(sName) == False:
+        if found_month(sName) == False and isinstance(self, NonHistoricalDownloads):
             return {None: None}
         else:
-            data =  await  self.getFinalTableList(sName,df,yr) 
-            cols = data.columns
-            
-            def format_name(name):
-                name = name.strip()
-                if ' ' in name:
-                    # Capitalise each word in  a company's name
-                    name = name.title()
-                # remove ltd from company name to help remove duplicates
-                # A name could be written at times with ltd at times without
-                name = " ".join([i for i in name.split(' ') if i not in ['Limited', 'Ltd']])
-                
-                return name
+            data =  await  self.getFinalTableList(sName,df,yr)
 
-            date_col = cols[-1] 
-            self.PRODUCTS = [*self.PRODUCTS, *cols[1:-2]]
-            # get dates
-            self.DATES = [*self.DATES, *list(data[date_col])]
+            if isinstance(self, NonHistoricalDownloads): 
+                cols = data.columns
 
-            if isinstance(self, NonHistoricalDownloads):
+                def format_name(name):
+                    name = name.strip()
+                    if ' ' in name:
+                        # Capitalise each word in  a company's name
+                        name = name.title()
+                    # remove ltd from company name to help remove duplicates
+                    # A name could be written at times with ltd at times without
+                    name = " ".join([i for i in name.split(' ') if i not in ['Limited', 'Ltd']])
+                    
+                    return name
+
+                date_col = cols[-1] 
+                self.PRODUCTS = [*self.PRODUCTS, *cols[1:-2]]
+                # get dates
+                self.DATES = [*self.DATES, *list(data[date_col])]
+
                 # format company names
                 for i in  data.columns:
                     if type(i) == str:
@@ -160,6 +164,7 @@ class HistoricalDownloads(Downloads):
         
         sub_tabs = {}       # Holds Sub tables for various products
         for prod in products:
+            
             st,endd = product_tables[prod][0],product_tables[prod][1]
             sub_tab = df.iloc[:,st:endd]
             sub_tab = pd.concat([df.iloc[:,0:2],sub_tab],axis=1)
@@ -174,14 +179,16 @@ class HistoricalDownloads(Downloads):
                     break
                 else:
                     idx_end = item.Index+1
-            sub_tab = sub_tab[0:idx_end]  #Get final sub table      
-            sub_tab['product'] = prod     #Add product name 
+            sub_tab = sub_tab[0:idx_end]  #Get final sub table    
 
-
-            sub_tab = create_date(sub_tab, sName, year) 
-          
-            sub_tabs[prod] = sub_tab
+            # format product name
+            if '/' in prod:
+                prod = prod.split('/')
+                prod = f"{prod[0]} ({prod[-1]})"
+            sub_tabs[prod] = sub_tab     #Add product name 
+            
             self.PRODUCTS_IN_SHEET_NAME[sName] = list(sub_tabs.keys())
+   
         return sub_tabs
 
 #-------------------------------------------------------------------------------------------------------
