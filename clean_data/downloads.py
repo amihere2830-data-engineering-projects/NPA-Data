@@ -1,15 +1,16 @@
-import os
-# from pyclbr import Function
 from  clean_data.books import Book
-from  clean_data.search import found_month, create_date
-# from typing import Any
 import pandas as pd
 from collections import OrderedDict
 import re
 import asyncio
 import time
-# from download_workBooks import  get_books_details
 from . loader import get_sheets
+from  clean_data.search.search import (
+    create_market_category,
+    found_month, 
+    create_date, 
+    rename_petroleum_products
+    )
 
 
 
@@ -25,9 +26,10 @@ class Downloads (Book):
         Format the retrieved sheet to obtain the necessary table
         """
         sName = sName.strip()
+    
         if found_month(sName) == False and isinstance(self, NonHistoricalDownloads):
             return {None: None}
-        else:
+        elif found_month(sName) and isinstance(self, NonHistoricalDownloads):
             data =  await  self.getFinalTableList(sName,df,yr)
 
             if isinstance(self, NonHistoricalDownloads): 
@@ -45,7 +47,7 @@ class Downloads (Book):
                     return name
 
                 date_col = cols[-1] 
-                self.PRODUCTS = [*self.PRODUCTS, *cols[1:-2]]
+                self.PRODUCTS = [*self.PRODUCTS, *list(data[cols[1]])]
                 # get dates
                 self.DATES = [*self.DATES, *list(data[date_col])]
 
@@ -62,21 +64,22 @@ class Downloads (Book):
                 self.COMPANIES["companies"] = [*self.COMPANIES["companies"], *list(data[company_col])]
                 self.COMPANIES["date"] = [*self.COMPANIES["date"], *list(data[date_col])]
             
-            return  {sName:data}
+        else:
+            data =  await  self.getFinalTableList(sName,df,yr)
+        return {sName:data}
         
     
     async def findFormattedTables(self,books,year):
-        st = time.time()
+        # st = time.time()
         formated = {}
         sheets = await asyncio.gather(*[self.formatTable(sName, df,year) for sName, df in books[year].items()])
         
         for sheet in sheets:  
             if list(sheet.keys())[0] == None:
-                # print (sheet)
                 continue
             for sn, df in sheet.items():
                 formated[str(sn)] = df
-        print(f'[{self.page_details[1]} - Formating]: [{time.time()-st} secons]')
+        # print(f'[{self.page_details[1]} - Formating]: [{time.time()-st} secons]')
         
         return formated
 
@@ -95,8 +98,13 @@ class Downloads (Book):
 
         init_tables = {}
         for table in sht_tables:             
-            
             for sn, df in table.items():
+
+                # Create market category column for the companies
+                if isinstance(self, NonHistoricalDownloads):
+                    market_cat = self.page_details[1].split("_")[0]
+                    df = create_market_category(df, 'MARKET', market_cat)
+
                 init_tables[sn] = df
 
         final_tables[self.page_details[1].split("_")[0]] = init_tables
@@ -185,9 +193,22 @@ class HistoricalDownloads(Downloads):
             if '/' in prod:
                 prod = prod.split('/')
                 prod = f"{prod[0]} ({prod[-1]})"
+            # Add product to table
+            sub_tab['product'] = prod
+            
+            # Rename products, RFO, and KEROSINE 
+            old_new_names = [('RFO', "RESIDUAL FUEL OIL"),('KEROSINE', 'KEROSENE')]
+            sub_tab =  rename_petroleum_products(sub_tab, 'product', old_new_names)
+
+            # Add geographic market of products to table
+            # First letter of sName indicates the market of the product
+            sub_tab['product_market'] = sName.split(' ')[0]
+
             sub_tabs[prod] = sub_tab     #Add product name 
             
             self.PRODUCTS_IN_SHEET_NAME[sName] = list(sub_tabs.keys())
+
+            
    
         return sub_tabs
 
@@ -216,6 +237,17 @@ class NonHistoricalDownloads(Downloads):
         idx_end = list(map(findIdxEnd, df.itertuples(index = True, name ='Pandas')))
         idx_end = list(OrderedDict.fromkeys(idx_end))[1:]
         df = df[idx[0]+1:idx_end[1]].reset_index(drop=True)
+
+        # melt products
+        df = pd.melt(df, id_vars=['COMPANY'], value_vars=list(df.columns)[1:], var_name="PRODUCTS", value_name="QUANTITY")
+
+        # Rename products
+        old_new_names = [
+            ('ATK', "Aviation (ATK)"),
+            ('Kerosine', 'Kerosene'),
+            ]
+        df =  rename_petroleum_products(df, 'PRODUCTS', old_new_names)
+
         df = create_date(df, sname, yr)
         return df
 
@@ -252,5 +284,10 @@ class NonHistoricalDownloads(Downloads):
                 ...
         if str(df.columns[-1]) == 'nan':
             df.rename(columns={col:'ALL PRODUCTS'},inplace=True)
+
+        # drop 'ALL PRODUCTS'
+        df.drop(columns=['ALL PRODUCTS'],inplace=True)
+
+        
 
         return self.findConvertedTable(df,sname,yr)
