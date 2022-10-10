@@ -1,4 +1,4 @@
-# NPA-Data
+# Data Engineering Project: NPA-Data
 The project extracts messy excel files from npa, clean them to obtain necessary data to be saved in a mongodb database
 The data include:
 ##### a) Companies in Ghana's oil & gas downstream petroleum and quantity of petroleum products sold 
