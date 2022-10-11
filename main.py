@@ -164,17 +164,6 @@ async def main():
     client.close()
 
 
-
-
-
-
-
-
-
-
-
-
-
 if __name__=="__main__":
     from clean_data.loader import get_books_details
     from clean_data.search.find_data_paths import TablePaths
