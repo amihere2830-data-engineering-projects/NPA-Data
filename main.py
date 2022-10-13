@@ -1,4 +1,3 @@
-
 import asyncio
 import os
 import pandas as pd
@@ -8,13 +7,71 @@ import urllib
 
 load_dotenv(find_dotenv())
 
+def get_column_name(df, indx):
+    return list(df.columns)[indx]
+
+def get_company_performance(df,comp_db_collection_names,\
+    prod_db_collection_names):
+    """
+    Create dictionary of companies and their performance 
+    """
+    # get column name for companies
+    col_name_company = get_column_name(df, 0)   
+    # get column name for markets
+    col_products = get_column_name(df, 1) 
+    # get column name for product quantity
+    col_quantity = get_column_name(df, 2)  
+    # get column name for date
+    col_date = get_column_name(df, 3)   
+
+    # Converts columns to list
+    func_col_to_list = lambda col: df[col].tolist() 
+
+    # Retreive all companies collections
+    comps = list(comp_db_collection_names[0].\
+        query('find', comp_db_collection_names[1])) 
+    # Retreive all products collections
+    prods = list(prod_db_collection_names[0].\
+        query('find', prod_db_collection_names[1])) 
+
+    # Return collections based on comapny name
+    func_comps = lambda val: [col for col in comps if val == col['name']] 
+    # Return collections based on product name
+    func_prods = lambda val: [col for col in prods if val == col['name']]
+
+    # Retrieve column values in list forms
+    comp, prod, qty, date = map(func_col_to_list, [col_name_company,\
+        col_products,col_quantity,col_date]) 
+
+
+    return [{'company':co, 'product':pr, 'quantity':qt, 'date':dt} for co, pr, qt, dt in zip(
+        list(map(func_comps, comp)), 
+        list(map(func_prods, prod)),
+        qty,
+        date
+        )]
+
+
+
+
+
+
+def get_product_data(df:pd.DataFrame)-> list[dict]:
+    """
+    Creates document structure of products, {"name": "product_name"} 
+    for mongodb 
+    """
+    # get column name for products
+    col_products = get_column_name(df, 1)   
+    product_lists = df[col_products].drop_duplicates().tolist()
+    return  [{"name":prod} for prod in product_lists]
 
 def get_market_data(df:pd.DataFrame)-> list[dict]:
     """
     Creates document structure of markets, {"name": "market_name",
     "description": full_name} for mongodb 
     """
-    col_market = list(df.columns)[-1]
+    col_market = get_column_name(df, -1)
     market_lists = df[col_market].drop_duplicates().tolist()
     return  [{"name":mkt, "description": market_name_desc[mkt]} for mkt\
          in market_lists]
@@ -24,8 +81,10 @@ def get_company_details(df:pd.DataFrame, market_db_collection_name:list)->list[d
         Create dictionary of company names and their
         markets of operation
         """
-        col_name_company = list(df.columns)[0]   # get column name for companies
-        col_name_market = list(df.columns)[-1]   # get column name for markets
+        # get column name for companies
+        col_name_company = get_column_name(df, 0) 
+        # get column name for markets
+        col_name_market = get_column_name(df, -1)   
         companies = df.drop_duplicates(subset=[col_name_company, col_name_market])
         companies = list(companies.groupby([col_name_company, col_name_market]).\
             agg('sum').index)
@@ -35,9 +94,11 @@ def get_company_details(df:pd.DataFrame, market_db_collection_name:list)->list[d
         company_markets = {}
         for comp_mkt in companies:
             if comp_mkt[0] in company_markets.keys():
-                company_markets[comp_mkt[0]].append(market_db_collection_name[0].query('find_one', market_db_collection_name[1], comp_mkt[1]))
+                company_markets[comp_mkt[0]].append(market_db_collection_name[0].\
+                    query('find_one', market_db_collection_name[1], comp_mkt[1]))
             else:
-                company_markets[comp_mkt[0]] = [market_db_collection_name[0].query('find_one', market_db_collection_name[1], comp_mkt[1])]
+                company_markets[comp_mkt[0]] = [market_db_collection_name[0].\
+                    query('find_one', market_db_collection_name[1], comp_mkt[1])]
         func = lambda  comp_name: {'name': comp_name, 'category': company_markets[comp_name]}
         return list(map(func, company_markets))
 
@@ -125,49 +186,58 @@ async def main():
     tables_omc = get_final_data(tables_omc, TablePaths(tables_omc)\
         .getPaths())
     
-    print("Done!!!!!!")
 
     tables = [*tables_bdc, *tables_bidec, *tables_omc]
 
-    tables_concat = pd.concat(tables, ignore_index=True)
+    tables_concat = pd.concat(tables, ignore_index=True).drop_duplicates()
+    # print(len(tables_concat))
+    # print(tables_concat.head())
     
 
-    
-    # -----------------------------------------------------
-    # ---------- Create Mongodb client connection ---------
-    # -----------------------------------------------------
+    # # -----------------------------------------------------
+    # # ---------- Create Mongodb client connection ---------
+    # # -----------------------------------------------------
 
     client = MongoClient(get_url())
 
 
     db_name = 'npa_db'
+
+    # # ---------Use products info to initialise database----------
+    products_db_data = get_product_data(tables_concat)
+    collection_name_prod = 'products'
+
+    product = NPAdb(client, db_name)
+    # # insert documents
+    product.insert_document(products_db_data, collection_name_prod)
     
-    
-    # ---------Use market info to initialise database----------
+    # # ---------Use market info to initialise database----------
     market_db_data = get_market_data(tables_concat)
     collection_name_mkt = 'markets'
 
     market = NPAdb(client, db_name)
-    # insert documents
+    # # insert documents
     market.insert_document(market_db_data, collection_name_mkt)
 
-    # -------Use company info to initialise database----------
+    # # -------Use company info to initialise database----------
     market_coll = [market, collection_name_mkt]
     company_db_data = get_company_details(tables_concat, market_coll)
     collection_name_comp = 'companies'
 
     company = NPAdb(client, db_name)
-    # insert documents
+    # # insert documents
     company.insert_document(company_db_data, collection_name_comp)
 
+    # # -------Use company performance info to initialise database----------
+    prod_coll = [product, collection_name_prod]
+    comp_coll = [company, collection_name_comp]
+    performance_db_data = get_company_performance(tables_concat, comp_coll, prod_coll)
+    collection_name_perf = 'performance'
+    performance = NPAdb(client, db_name)
+    # # insert documents into performance collection
+    performance.insert_document(performance_db_data, collection_name_perf)
 
     client.close()
-
-
-
-
-
-
 
 
 
