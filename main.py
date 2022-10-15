@@ -35,9 +35,9 @@ def get_company_performance(df,comp_db_collection_names,\
         query('find', prod_db_collection_names[1])) 
 
     # Return collections based on comapny name
-    func_comps = lambda val: [col for col in comps if val == col['name']] 
+    func_comps = lambda val: [col['_id'] for col in comps if val == col['name']] 
     # Return collections based on product name
-    func_prods = lambda val: [col for col in prods if val == col['name']]
+    func_prods = lambda val: [col['_id'] for col in prods if val == col['name']]
 
     # Retrieve column values in list forms
     comp, prod, qty, date = map(func_col_to_list, [col_name_company,\
@@ -92,13 +92,16 @@ def get_company_details(df:pd.DataFrame, market_db_collection_name:list)->list[d
         # get company names and their markets of operation
     
         company_markets = {}
+        # query unique markets from database
+        # mkts = list(set([comp_mkt[1] for comp_mkt in companies]))
+        mkt_dbs = list(market_db_collection_name[0].query('find', market_db_collection_name[1]))
+        
         for comp_mkt in companies:
+            # retrieve market id to create company database
             if comp_mkt[0] in company_markets.keys():
-                company_markets[comp_mkt[0]].append(market_db_collection_name[0].\
-                    query('find_one', market_db_collection_name[1], comp_mkt[1]))
+                company_markets[comp_mkt[0]].append(*[mkt['_id'] for mkt in mkt_dbs if mkt['name']==comp_mkt[1]])
             else:
-                company_markets[comp_mkt[0]] = [market_db_collection_name[0].\
-                    query('find_one', market_db_collection_name[1], comp_mkt[1])]
+                company_markets[comp_mkt[0]] = [*[mkt['_id'] for mkt in mkt_dbs if mkt['name']==comp_mkt[1]]]
         func = lambda  comp_name: {'name': comp_name, 'category': company_markets[comp_name]}
         return list(map(func, company_markets))
 
@@ -208,7 +211,7 @@ async def main():
     collection_name_prod = 'products'
 
     product = NPAdb(client, db_name)
-    # # insert documents
+    # # # insert documents
     product.insert_document(products_db_data, collection_name_prod)
     
     # # ---------Use market info to initialise database----------
@@ -240,14 +243,11 @@ async def main():
     client.close()
 
 
-<<<<<<< HEAD
 
 
 
 
 
-=======
->>>>>>> refs/remotes/origin/main
 if __name__=="__main__":
     from clean_data.loader import get_books_details
     from clean_data.search.find_data_paths import TablePaths
